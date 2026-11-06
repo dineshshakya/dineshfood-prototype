@@ -26,11 +26,11 @@ img{display:block;max-width:100%}
 .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
 .eyebrow{font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase}
 .topbar{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 96%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.topbar-in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 0}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 0;flex-wrap:nowrap}
 .logo{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;font-size:27px;letter-spacing:.01em;line-height:1;display:flex;align-items:center;gap:10px}
 .logo svg{width:36px;height:36px;flex:0 0 auto}
 .logo span{color:var(--gold)}
-.role-switch{display:flex;gap:26px;flex-wrap:wrap}
+.role-switch{display:flex;gap:26px;flex-wrap:nowrap;flex-shrink:1;min-width:0}
 .role-switch button{border:0;background:transparent;padding:6px 0;border-bottom:2px solid transparent;font:inherit;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;color:var(--muted)}
 .role-switch button.active{color:var(--ink);border-bottom-color:var(--ink)}
 .hero-full{position:relative;margin:0 calc(50% - 50vw);height:min(600px,78vh);min-height:460px;overflow:hidden;background:#222}
@@ -60,6 +60,7 @@ section{padding:52px 0}
 @media(max-width:900px){.layout{grid-template-columns:1fr}}
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:36px 24px}
 @media(max-width:560px){.grid{grid-template-columns:1fr}}
+@media(max-width:640px){.wrap{padding:0 14px}.topbar-in{gap:10px;padding:12px 0}.logo{font-size:21px;gap:7px;white-space:nowrap;flex-shrink:0}.logo svg{width:28px;height:28px}.role-switch{gap:10px}.role-switch button{font-size:10px;letter-spacing:.1em;white-space:nowrap;padding:4px 0}}
 .card{background:transparent}
 .card img{width:100%;height:230px;object-fit:cover;border-radius:6px}
 .card-body{padding:16px 2px 0}
