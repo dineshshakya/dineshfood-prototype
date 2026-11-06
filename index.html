@@ -122,6 +122,11 @@ input[type=range]{width:100%;accent-color:var(--ink)}
 .bar i{display:block;height:100%}
 .incoming{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font-size:14.5px;color:var(--muted)}
 .demo-tag{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.compare{display:grid}
+.compare div{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.compare div:last-child{border-bottom:0}
+.compare .fee{font-weight:700;white-space:nowrap}
+.compare .us span{color:var(--gold)}
 .flow{margin:0;padding-left:20px;display:grid;gap:12px;font-size:15px}
 .flow li::marker{color:var(--gold)}
 .closing{border-top:1px solid var(--line);padding:56px 0 8px;text-align:center}
@@ -167,7 +172,7 @@ footer b{color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;font-si
     <div class="meta-strip">
       <span>100% MEHKO-permitted kitchens</span><i>·</i>
       <span>Pickup only</span><i>·</i>
-      <span>5% pilot fee — Year 1</span>
+      <span>10% commission — pilot rate</span>
     </div>
 
     <p class="notice" role="note"><b>Prototype demo.</b> The kitchens and dishes below are sample listings so you can try the full flow — add to cart, pick a time, place an order, and watch it move to “Ready for pickup.” No real order or payment is taken on this page.</p>
@@ -197,8 +202,8 @@ footer b{color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;font-si
           </div>
           <div class="split" id="splitBox" style="display:none">
             <b>Where your money goes</b>
-            <div><span>Chef receives (95%)</span><strong id="chefGets" style="color:var(--ink)">$0.00</strong></div>
-            <div><span>Platform keeps (5% pilot fee)</span><strong id="platformGets" style="color:var(--ink)">$0.00</strong></div>
+            <div><span>Chef receives (90%)</span><strong id="chefGets" style="color:var(--ink)">$0.00</strong></div>
+            <div><span>Platform keeps (10% commission)</span><strong id="platformGets" style="color:var(--ink)">$0.00</strong></div>
             <div>Chef is paid out via Stripe Connect after pickup.</div>
           </div>
 
@@ -246,7 +251,7 @@ footer b{color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;font-si
           <div class="totals">
             <div><span>Orders today</span><b id="chefOrders">3</b></div>
             <div><span>Meals cooked</span><b>18 / 30 daily cap</b></div>
-            <div><span>You earned today (after 5% fee)</span><b>$148.20</b></div>
+            <div><span>You earned today (after 10% fee)</span><b>$140.40</b></div>
             <div><span>Next payout</span><b>Via Stripe Connect</b></div>
           </div>
           <div style="margin-top:18px"><b style="font-size:13px">Daily cap progress</b><div class="bar"><i style="width:60%;background:var(--gold)"></i></div><span style="font-size:13.5px;color:var(--muted)">18 of 30 meals — the menu auto-closes when you hit your cap, so you never overcommit.</span></div>
@@ -276,14 +281,14 @@ footer b{color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;font-si
           <label for="calcRange" style="margin-top:4px">Order total: <span id="calcVal">$40</span></label>
           <input type="range" id="calcRange" min="10" max="120" value="40" step="5">
           <div class="phase-btns" id="phaseBtns">
-            <button class="active" data-fee="5">Year 1 · 5%</button>
-            <button data-fee="10">Year 2 · 10%</button>
-            <button data-fee="15">Later · 15%</button>
+            <button data-fee="5">Promo · 5%</button>
+            <button class="active" data-fee="10">Pilot rate · 10% — recommended</button>
+            <button data-fee="15">Scale · 15%</button>
           </div>
-          <div class="bar"><i id="barChef" style="background:var(--green);width:95%"></i><i id="barPlat" style="background:var(--gold);width:5%"></i></div>
+          <div class="bar"><i id="barChef" style="background:var(--green);width:90%"></i><i id="barPlat" style="background:var(--gold);width:10%"></i></div>
           <div class="totals">
-            <div><span>Chef receives</span><b id="calcChef">$38.00</b></div>
-            <div><span>Platform commission</span><b id="calcPlat">$2.00</b></div>
+            <div><span>Chef receives</span><b id="calcChef">$36.00</b></div>
+            <div><span>Platform commission</span><b id="calcPlat">$4.00</b></div>
           </div>
           <p style="font-size:13px;color:var(--muted);margin-bottom:0">The commission is the platform's business income. Chefs receive their payout (with a payment record for their own taxes) — each side reports its own income.</p>
         </div>
@@ -298,6 +303,28 @@ footer b{color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;font-si
           </ol>
         </div>
       </div>
+      <div class="two" style="margin-top:24px">
+        <div class="panel">
+          <h3>What other platforms charge</h3>
+          <p class="lead-sm">Commission taken from the seller's side of each order. Delivery apps charge the most because they run a driver fleet — and their customers usually pay delivery and service fees on top.</p>
+          <div class="compare">
+            <div><span>DoorDash Basic — lowest tier</span><span class="fee">~15%</span></div>
+            <div><span>DoorDash Plus</span><span class="fee">~25%</span></div>
+            <div><span>DoorDash Premier</span><span class="fee">~30%</span></div>
+            <div><span>Home-chef meal-sharing platforms</span><span class="fee">~15–20%</span></div>
+            <div class="us"><span>dineshfood — pickup only</span><span class="fee">10%</span></div>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Why 10% fits this platform</h3>
+          <ul class="checklist">
+            <li><span class="check">✓</span><span><b>No delivery fleet to pay</b> — customers pick up themselves, so the biggest DoorDash cost never exists here.</span></li>
+            <li><span class="check">✓</span><span><b>Home chefs run thin margins</b> — a lower fee keeps small MEHKO kitchens listing instead of cooking only for themselves.</span></li>
+            <li><span class="check">✓</span><span><b>It still covers the platform's costs</b> — card processing (about 2.9% + 30¢ per order via Stripe) comes out of the 10%, with room left for running the service.</span></li>
+            <li><span class="check">✓</span><span><b>It undercuts DoorDash's lowest tier</b> — an easy selling point when recruiting chefs: keep 90% of every order.</span></li>
+          </ul>
+        </div>
+      </div>
     </section>
   </div>
 
@@ -309,7 +336,7 @@ footer b{color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;font-si
       <a href="https://dineshshakya.github.io/homemade-food-demo/" target="_blank" rel="noopener">Investor demo prototype →</a>
       <a href="https://dineshshakya.github.io/dineshfood/" target="_blank" rel="noopener">dineshfood main site →</a>
     </div>
-    <p style="font-size:13px;margin-top:22px">Pilot area: San Diego 92108 · MEHKO-permitted home kitchens only · Pickup only · Commission 5% → 10% → 15%</p>
+    <p style="font-size:13px;margin-top:22px">Pilot area: San Diego 92108 · MEHKO-permitted home kitchens only · Pickup only · Commission 10% pilot rate</p>
   </div>
 </main>
 
@@ -359,8 +386,8 @@ function sync(){
     totals.style.display="block";split.style.display="block";btn.disabled=orderPlaced;
     document.getElementById('subTotal').textContent=money(t.sub);
     document.getElementById('grandTotal').textContent=money(t.sub);
-    document.getElementById('chefGets').textContent=money(t.sub*0.95);
-    document.getElementById('platformGets').textContent=money(t.sub*0.05);
+    document.getElementById('chefGets').textContent=money(t.sub*0.90);
+    document.getElementById('platformGets').textContent=money(t.sub*0.10);
   }
   var bar=document.getElementById('stickyBar');
   if(t.count>0&&!orderPlaced){bar.classList.add('show');document.getElementById('stickyText').textContent=t.count+" item(s) · "+money(t.sub);}else{bar.classList.remove('show')}
@@ -381,7 +408,7 @@ document.getElementById('placeOrder').addEventListener('click',function(){
   document.getElementById('trackMeta').textContent="Pickup today at "+slot+" · For "+name+" · Show this code at the handoff point.";
   document.getElementById('trackBox').classList.add('show');
   document.getElementById('placeOrder').disabled=true; document.getElementById('placeOrder').textContent="Order placed ✓";
-  document.getElementById('chefIncoming').innerHTML="<b style='color:var(--ink)'>New incoming order "+code+"</b><br>"+t.count+" item(s) · "+money(t.sub)+" · Pickup "+slot+"<br>Chef earned "+money(t.sub*0.95)+" after 5% platform fee.";
+  document.getElementById('chefIncoming').innerHTML="<b style='color:var(--ink)'>New incoming order "+code+"</b><br>"+t.count+" item(s) · "+money(t.sub)+" · Pickup "+slot+"<br>Chef earned "+money(t.sub*0.90)+" after 10% platform fee.";
   document.getElementById('chefOrders').textContent="4";
   var steps=document.querySelectorAll('#steps .step');
   steps.forEach(function(s){s.classList.remove('done','now')});
@@ -397,7 +424,7 @@ document.getElementById('resetDemo').addEventListener('click',function(){
   document.getElementById('chefIncoming').textContent="No new demo order yet — place one in the Menu view and it will appear here.";
   document.getElementById('chefOrders').textContent="3"; sync();
 });
-var fee=5;
+var fee=10;
 function calc(){
   var total=+document.getElementById('calcRange').value;
   document.getElementById('calcVal').textContent="$"+total;
