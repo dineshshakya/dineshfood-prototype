@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
 <link rel="icon" href="data:,">
-<title>dineshfood Prototype Demo — Home-Cooked, Pickup in 92108</title>
+<title>hometable Prototype Demo — Home-Cooked, Pickup in 92108</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
@@ -180,7 +180,7 @@ footer b{color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;font-si
         <p>Start with momos, add a few home-style signatures, and pick it up fresh — cooked by MEHKO-permitted home chefs near you. No delivery, no restaurant markup.</p>
         <div class="hero-ctas">
           <a class="btn btn-white" href="#menu">Browse today's menu</a>
-          <a class="btn btn-outline" href="#chef-join">Cook on dineshfood</a>
+          <a class="btn btn-outline" href="#chef-join">Cook on hometable</a>
         </div>
       </div></div>
     </div>
@@ -292,7 +292,7 @@ footer b{color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;font-si
           <ul class="checklist">
             <li><span class="check">✓</span><span><b>MEHKO permit</b> from San Diego County DEHQ for your home kitchen</span></li>
             <li><span class="check">✓</span><span><b>Food handler / food safety</b> training completed</span></li>
-            <li><span class="check">✓</span><span><b>ID + kitchen verification</b> and admin approval on dineshfood</span></li>
+            <li><span class="check">✓</span><span><b>ID + kitchen verification</b> and admin approval on hometable</span></li>
             <li><span class="check">✓</span><span><b>Stripe Connect</b> set up so you can receive payouts</span></li>
             <li><span class="check">✓</span><span><b>Pickup plan</b> — door, lobby, or curbside handoff; customers don't need to enter your home</span></li>
           </ul>
@@ -346,7 +346,7 @@ footer b{color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;font-si
             <div><span>DoorDash Plus</span><span class="fee">~25%</span></div>
             <div><span>DoorDash Premier</span><span class="fee">~30%</span></div>
             <div><span>Home-chef meal-sharing platforms</span><span class="fee">~15–20%</span></div>
-            <div class="us"><span>dineshfood — pickup only</span><span class="fee">10%</span></div>
+            <div class="us"><span>hometable — pickup only</span><span class="fee">10%</span></div>
           </div>
         </div>
         <div class="panel">
@@ -368,14 +368,14 @@ footer b{color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;font-si
     <p>Use this page's share button (top of the screen) to send this prototype to a friend. The earlier live sites are also on GitHub Pages:</p>
     <div class="links">
       <a href="https://dineshshakya.github.io/homemade-food-demo/" target="_blank" rel="noopener">Investor demo prototype →</a>
-      <a href="https://dineshshakya.github.io/dineshfood/" target="_blank" rel="noopener">dineshfood main site →</a>
+      <a href="https://dineshshakya.github.io/dineshfood/" target="_blank" rel="noopener">Main site →</a>
     </div>
     <p style="font-size:13px;margin-top:22px">Pilot area: San Diego 92108 · MEHKO-permitted home kitchens only · Pickup only · Commission 10% pilot rate</p>
   </div>
 </main>
 
 <footer><div class="wrap">
-  <b>dineshfood</b><br>
+  <b>hometable</b><br>
   Next Generation Digital Home Cooked — interactive prototype for feedback and sharing.<br>
   Demo kitchens, menu, and orders are samples. No real orders, payments, or chef listings are live on this page yet.
 </div></footer>
@@ -514,7 +514,7 @@ document.querySelectorAll('.role-switch button').forEach(function(b){b.addEventL
 })});
 document.getElementById('placeOrder').addEventListener('click',function(){
   if(orderPlaced)return; orderPlaced=true;
-  var t=cartTotals(); var code="DF-"+Math.floor(1000+Math.random()*9000);
+  var t=cartTotals(); var code="HT-"+Math.floor(1000+Math.random()*9000);
   var slot=document.getElementById('slot').value; var name=document.getElementById('pickupName').value||"Guest";
   document.getElementById('orderCode').textContent=code;
   document.getElementById('trackMeta').textContent="Pickup today at "+slot+" · For "+name+" · Show this code at the handoff point.";
