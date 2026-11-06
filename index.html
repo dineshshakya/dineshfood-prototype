@@ -27,7 +27,8 @@ img{display:block;max-width:100%}
 .eyebrow{font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase}
 .topbar{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 96%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .topbar-in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 0}
-.logo{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;font-size:27px;letter-spacing:.01em;line-height:1}
+.logo{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;font-size:27px;letter-spacing:.01em;line-height:1;display:flex;align-items:center;gap:10px}
+.logo svg{width:36px;height:36px;flex:0 0 auto}
 .logo span{color:var(--gold)}
 .role-switch{display:flex;gap:26px;flex-wrap:wrap}
 .role-switch button{border:0;background:transparent;padding:6px 0;border-bottom:2px solid transparent;font:inherit;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;color:var(--muted)}
@@ -145,7 +146,7 @@ footer b{color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;font-si
 </head>
 <body>
 <header class="topbar"><div class="wrap topbar-in">
-  <div class="logo">dinesh<span>food</span></div>
+  <div class="logo"><svg viewBox="40 60 320 240" style="width:44px;height:44px" aria-hidden="true"><path d="M 60 190 L 200 84 L 340 190" fill="none" stroke="currentColor" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/><path d="M 168 196 q 12 -16 0 -32" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round"/><path d="M 232 196 q -12 -16 0 -32" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round"/><path d="M 118 212 L 282 212 A 82 62 0 0 1 118 212 Z" fill="currentColor"/><rect x="100" y="206" width="200" height="12" rx="6" fill="currentColor"/></svg>hometable</div>
   <nav class="role-switch" role="tablist" aria-label="Switch view">
     <button class="active" data-view="customer">Menu</button>
     <button data-view="chef">Chef view</button>
